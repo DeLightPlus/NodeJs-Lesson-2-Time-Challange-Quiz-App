@@ -9,19 +9,19 @@ const quizQuestions = [
     question: 'Which of the following command will show version of Node?',
     options: ['npm --version', 'node --version', 'npm getVersion', 'node getVersion'],
     answer: 'node --version',
-    timeLimit: 15 // in seconds
+    timeLimit: 20 // in seconds
   },
   {
     question: 'All APIs of Node.JS are.?',
     options: ['Asynchronous', 'Synchronous', 'Both of the above', 'None of the above'],
     answer: 'Asynchronous',
-    timeLimit: 15 // in seconds
+    timeLimit: 20 // in seconds
   },
   {
     question: 'Which of the following is not a valid HTTP method?',
     options: ['GET', 'PUT', 'POST', 'HEADER'],
     answer: 'HEADER',
-    timeLimit: 15 // in seconds
+    timeLimit: 20 // in seconds
   }
 ];
 
