@@ -101,7 +101,7 @@ function startQuiz()
 
   displayQuestion();
 
-  rl.setPrompt('Enter your answer: ');
+  rl.setPrompt('\n Enter your answer: ');
   rl.prompt();
   rl.on('line', (answer) => {
     handleUserInput(answer);
