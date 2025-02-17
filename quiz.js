@@ -7,20 +7,20 @@ const rl = readline.createInterface({
 const quizQuestions = [
   {
     question: 'Which of the following command will show version of Node?',
-    options: ['npm --version', 'node --version', 'npm getVersion', 'node getVersion'],
-    answer: 'node --version',
+    options: ['(a). npm --version', '(b). node --version', '(c). npm getVersion', '(d). node getVersion'],
+    answer: 'a',
     timeLimit: 20 // in seconds
   },
   {
     question: 'All APIs of Node.JS are.?',
-    options: ['Asynchronous', 'Synchronous', 'Both of the above', 'None of the above'],
-    answer: 'Asynchronous',
+    options: ['(a). Asynchronous', '(b). Synchronous', '(c). Both of the above', '(d). None of the above'],
+    answer: 'a',
     timeLimit: 20 // in seconds
   },
   {
     question: 'Which of the following is not a valid HTTP method?',
-    options: ['GET', 'PUT', 'POST', 'HEADER'],
-    answer: 'HEADER',
+    options: ['(a). GET', '(b). PUT', '(c). POST', '(d). HEADER'],
+    answer: 'd',
     timeLimit: 20 // in seconds
   }
 ];
@@ -53,21 +53,21 @@ function displayQuestion()
 
 function displayNextQuestion() 
 {
-    console.log('----------------------------------------------');    
-    clearInterval(questionTimer);
-    currentQuestionIndex++;
-    if (currentQuestionIndex >= quizQuestions.length) 
-    {
-        endQuiz();
-    } 
-    else { displayQuestion(); }
+  console.log('----------------------------------------------');    
+  clearInterval(questionTimer);
+  currentQuestionIndex++;
+  if (currentQuestionIndex >= quizQuestions.length) 
+  {
+      endQuiz();
+  } 
+  else { displayQuestion(); }
 }
 
 function endQuiz() 
 {
-    clearInterval(quizTimer);
-    console.log(`\nQuiz over! Your final score is: ${score}/${quizQuestions.length}`);
-    process.exit();
+  clearInterval(quizTimer);
+  console.log(`\nQuiz over! Your final score is: ${score}/${quizQuestions.length}`);
+  process.exit();
 }
 
 function handleUserInput(answer) 
@@ -90,10 +90,11 @@ function startQuiz()
     {
         quizTimeLimit--;
         // console.log(`Quiz time remaining: ${quizTimeLimit} seconds`);
-        if (quizTimeLimit === 0) 
+        process.stdout.write(`\rTime Left Remain: ${quizTimeLimit}`)
+        if (quizTimeLimit <= 0) 
         {
             clearInterval(quizTimer);
-            console.log('Quiz time\'s up!');
+            console.log('\nQuiz time\'s up!');
             endQuiz();
         }
     }, 1000);
